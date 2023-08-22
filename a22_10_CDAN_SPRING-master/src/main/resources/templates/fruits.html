@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+  <title>Liste des Fruits</title>
+</head>
+<body>
+<h1>Liste des Fruits</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Nom</th>
+    <th>Activé</th>
+    <th>Nombre</th>
+
+  </tr>
+  <tr th:each="fruit : ${fruits}">
+    <td th:text="${fruit.fruitslegumesid}"></td>
+    <td th:text="${fruit.nom}"></td>
+    <td th:text="${fruit.activated}"></td>
+    <td th:text="${fruit.number}"></td>
+  </tr>
+</table>
+</body>
+</html>
