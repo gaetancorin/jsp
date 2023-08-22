@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Material Design for Bootstrap</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="/img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="/css/mdb.min.css" />
+</head>
+<body>
+<!-- Start your project here-->
+<section class="vh-100" style="background-color: #9A616D;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+                <div class="card" style="border-radius: 1rem;">
+                    <div class="row g-0">
+                        <div class="col-md-12 col-lg-12 d-flex align-items-center">
+                            <div class="card-body p-4 p-lg-5 text-black">
+                                <form method="post" action="/user/loginSubmit" th:object="${userBean}">
+                                    <div class="d-flex align-items-center mb-3 pb-1">
+                                        <i class="fa fa-truck fa-2x me-3" style="color: #ff6219;"></i>
+                                        <span class="h1 fw-bold mb-0">Order your fruits and vegetables</span>
+                                    </div>
+
+                                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Personnal informations :</h5>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form2Example17">Name :</label>
+                                        <input type="text" id="form2Example17" class="form-control form-control-lg" th:field="*{login}" />
+
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form2Example2">Phone number :</label>
+                                        <input type="text" id="form2Example2" class="form-control form-control-lg" th:field="*{password}" />
+
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form2Example1">recovery date : </label>
+                                        <input type="date" id="form2Example1" class="form-control form-control-lg" th:field="*{password}" />
+
+                                    </div>
+
+
+                                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Fruits and vegetables availables :</h5>
+
+                                    <div class="card-body p-1 text-black border d-flex align-items-center">
+                                       <p class="col-6 ml-1">Apples</p>
+                                        <input type="number" min="0" id="form2Example3" th:field="*{password}" />
+                                    </div>
+
+                                    <div class="card-body p-1 text-black border d-flex align-items-center">
+                                        <p class="col-6 ml-1">Pineapple</p>
+                                        <input type="number" min="0" id="form2Example4" th:field="*{password}" />
+                                    </div>
+
+
+
+                                    <div class="pt-1 mb-4">
+                                        <button class="btn btn-dark btn-lg btn-block" type="submit">Start your order</button>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- End your project here-->
+
+<!-- MDB -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<!-- Custom scripts -->
+<script type="text/javascript"></script>
+</body>
+</html>
