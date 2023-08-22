@@ -10,11 +10,8 @@ import org.springframework.stereotype.Service
 class FruitslegumesService(val fruitslegumesRepository: FruitslegumesRepository) {
 
 
-    fun getAll() : List<Fruitslegumes>{
-        return fruitslegumesRepository.findAll()
-    }
-
     fun getAllFruits(): List<Fruitslegumes> = fruitslegumesRepository.findAll()
 
+    fun getFruitById(id: Long): Fruitslegumes? = fruitslegumesRepository.findById(id).orElse(null)
 
 }
