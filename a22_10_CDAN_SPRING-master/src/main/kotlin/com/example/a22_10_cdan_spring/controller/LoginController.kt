@@ -2,6 +2,7 @@ package com.example.a22_10_cdan_spring.controller
 
 import com.example.a22_10_cdan_spring.UserBean
 import com.example.a22_10_cdan_spring.model.UserService
+import com.example.a22_10_cdan_spring.service.FruitslegumesService
 import jakarta.servlet.http.HttpSession
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
@@ -69,6 +70,8 @@ class LoginController {
         println("/login " + session.getId())
 
         var userSave = UserService.findBySessionId(session.id)
+
+//        var fruitslegumes = FruitslegumesService.getAll()
 
         //Lance studentForm.html
         return "/products";
