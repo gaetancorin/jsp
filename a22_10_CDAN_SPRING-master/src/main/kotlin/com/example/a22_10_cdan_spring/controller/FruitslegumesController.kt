@@ -33,7 +33,7 @@ class FruitslegumesController(private val fruitLegumeService: FruitslegumesServi
     }
 
     //http://localhost:8080/fruits
-    @GetMapping
+    @PostMapping
     fun getAllFruits(model: Model): String {
         val fruits = fruitLegumeService.getAllFruits()
         model.addAttribute("fruits", fruits)

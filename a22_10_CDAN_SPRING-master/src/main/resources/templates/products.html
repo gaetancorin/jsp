@@ -31,7 +31,7 @@
                     <div class="row g-0">
                         <div class="col-md-12 col-lg-12 d-flex align-items-center">
                             <div class="card-body p-4 p-lg-5 text-black">
-                                <form th:action="@{/commande}" method="post" th:object="${userBean}">
+                                <form method="post" action="/fruits" th:object="${userBean}">
                                     <div class="d-flex align-items-center mb-3 pb-1">
                                         <i class="fa fa-truck fa-2x me-3" style="color: #ff6219;"></i>
                                         <span class="h1 fw-bold mb-0">Order your fruits and vegetables</span>
@@ -62,7 +62,6 @@
 
                                     <div th:each="fruit : ${fruits}" th:if="${fruit.activated == 1}" class="card-body p-1 text-black border d-flex align-items-center">
                                         <p th:text="${fruit.nom}" class="col-6 ml-1"></p>
-                                        <!--<p th:text="${fruit.id}" name="selectedFruits" class="col-6 ml-1"></p>-->
                                         <input type="number" min="0" th:max="${fruit.number}" id="form2Example5"/>
                                     </div>
 
