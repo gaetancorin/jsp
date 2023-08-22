@@ -18,20 +18,21 @@ class FruitslegumesController(private val fruitLegumeService: FruitslegumesServi
 
     //http://localhost:8080/fruits/products
     @GetMapping("/products")
-    fun products(userBean: UserBean, fruitslegumes: Fruitslegumes, session: HttpSession): String {
+    fun products(userBean: UserBean, model: Model, session: HttpSession): String {
         userBean.login = "toto@toto.fr"
         userBean.password = "tata"
         println("/login " + session.getId())
 
         var userSave = UserService.findBySessionId(session.id)
 
-//        var fruitslegumes = FruitslegumesService.getAll()
-//        var fruitslegumes2 = FruitslegumesService.getAllFruits()
+        val fruits = fruitLegumeService.getAllFruits()
+        model.addAttribute("fruits", fruits)
 
         //Lance studentForm.html
         return "/products";
     }
 
+    //http://localhost:8080/fruits
     @GetMapping
     fun getAllFruits(model: Model): String {
         val fruits = fruitLegumeService.getAllFruits()

@@ -60,17 +60,10 @@
 
                                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Fruits and vegetables availables :</h5>
 
-                                    <div class="card-body p-1 text-black border d-flex align-items-center">
-                                       <p class="col-6 ml-1">Apples</p>
-                                        <input type="number" min="0" id="form2Example3" th:field="*{password}" />
+                                    <div th:each="fruit : ${fruits}" th:if="${fruit.activated == 1}" class="card-body p-1 text-black border d-flex align-items-center">
+                                        <p th:text="${fruit.nom}" class="col-6 ml-1"></p>
+                                        <input type="number" min="0" th:max="${fruit.number}" id="form2Example5"/>
                                     </div>
-
-                                    <div class="card-body p-1 text-black border d-flex align-items-center">
-                                        <p class="col-6 ml-1">Pineapple</p>
-                                        <input type="number" min="0" id="form2Example4" th:field="*{password}" />
-                                    </div>
-
-
 
                                     <div class="pt-1 mb-4">
                                         <button class="btn btn-dark btn-lg btn-block" type="submit">Start your order</button>
