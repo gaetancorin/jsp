@@ -14,4 +14,12 @@ class FruitslegumesService(val fruitslegumesRepository: FruitslegumesRepository)
 
     fun getFruitById(id: Long): Fruitslegumes? = fruitslegumesRepository.findById(id).orElse(null)
 
+    fun updateFruitQuantity(fruitId: Long, newQuantity: Int) {
+        val fruit = fruitslegumesRepository.findById(fruitId).orElse(null)
+        fruit?.let {
+            it.number = newQuantity
+            fruitslegumesRepository.save(it)
+        }
+    }
+
 }
